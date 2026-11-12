@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Glow & Grace Beauty Salon</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Allura&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#fff;color:#333;transition:.3s}
+a{text-decoration:none;color:inherit}
+.topbar{background:#a4133c;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:8px 5%;font-size:12.5px;flex-wrap:wrap;gap:8px}
+.topbar span{margin-right:18px}
+.social a{margin-left:12px;font-size:15px;color:#fff}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 10px rgba(0,0,0,.06);transition:.3s}
+.logo{font-family:'Playfair Display',serif;font-size:30px;color:#a4133c;line-height:.9;text-align:center}
+.logo small{display:block;font-size:9px;letter-spacing:3px;color:#a4133c;font-family:'Poppins';border-top:1px solid #a4133c;border-bottom:1px solid #a4133c;padding:2px 0;margin-top:3px}
+nav{display:flex;gap:22px;font-size:14px}
+nav a{color:#333}
+nav a.active{color:#a4133c;border-bottom:2px solid #a4133c;padding-bottom:3px;font-weight:600}
+.book{background:#e7548a;color:#fff!important;padding:9px 18px;border-radius:20px;font-size:13px;font-weight:500}
+.header-right{display:flex;align-items:center;gap:10px}
+
+/* THEME BUTTON - TUMHARI PIC JAISA - WHITE PILL + LIKHA HUA */
+.theme-btn{background:#fff;color:#888;border:1px solid #ddd;padding:10px 22px;border-radius:30px;font-size:15px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15);font-weight:500}
+.theme-btn:hover{box-shadow:0 4px 12px rgba(0,0,0,.2)}
+
+.hero{
+background:linear-gradient(to right, #ffd6e0 0%, #ffd6e0 38%, rgba(255,214,224,.65) 52%, rgba(255,214,224,0) 68%), url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:right center;
+text-align:left;
+padding:60px 5% 55px;
+min-height:260px;
+}
+.hero p{letter-spacing:4px;font-size:12px;color:#333}
+.hero p::before{content:'—— '}
+.hero p::after{content:' ——'}
+.hero h1{font-family:'Playfair Display',serif;font-size:88px;color:#a4133c;line-height:1;margin:8px 0}
+.hero h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:21px;color:#333}
+.hero .heart{font-size:26px;color:#a4133c;margin-top:10px}
+.filter-wrap{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 2%;flex-wrap:wrap;background:#fff;transition:.3s}
+.filter-wrap .line{flex:1;height:1px;background:#e7548a;min-width:30px}
+.filter{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.filter button{border:1px solid #d4af37;background:#fff;color:#a4133c;font-size:13px;cursor:pointer;padding:8px 16px;border-radius:20px;display:flex;align-items:center;gap:6px}
+.filter button.active{background:#a4133c;color:#fff;border-color:#a4133c}
+.filter button:hover{background:#ffe6ee}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:10px 4% 40px;transition:.3s}
+.item{border:2px solid #d4af37;border-radius:22px;overflow:hidden;background:#fff;cursor:pointer}
+.item img{width:100%;height:320px;object-fit:cover;display:block;transition:.3s}
+.item:hover img{transform:scale(1.05)}
+.item p{text-align:center;padding:10px;font-size:13px;letter-spacing:1px;color:#777}
+.hide{display:none!important}
+.footer{background:#5c0a28;color:#fff;display:flex;justify-content:space-between;gap:30px;padding:35px 5% 25px;flex-wrap:wrap}
+.footer .col{flex:1;min-width:220px}
+.footer .flogo{font-family:'Playfair Display',serif;font-size:34px;line-height:1;text-align:center}
+.footer .flogo small{display:block;font-size:11px;letter-spacing:3px;border-top:1px solid #fff;border-bottom:1px solid #fff;padding:3px 0;margin:6px 0}
+.footer .tag{font-style:italic;text-align:center;font-size:14px;margin-top:8px}
+.footer h3{font-size:18px;margin-bottom:12px}
+.footer ul{list-style:none}
+.footer ul li{margin:7px 0;font-size:14px}
+.footer ul li a{color:#fff}
+.footer ul li a:hover{color:#ffb3cd}
+.footer .contact p{margin:8px 0;font-size:14px}
+.footer .bottom{text-align:center;width:100%;border-top:1px solid rgba(255,255,255,.2);padding-top:12px;margin-top:15px;font-size:12px;color:#ffc2d6}
+
+/* DARK THEME */
+body.dark{background:#1a0a12;color:#f5e6ec}
+body.dark header{background:#2a1220}
+body.dark nav a{color:#f5e6ec}
+body.dark nav a.active{color:#ff7aa8;border-color:#ff7aa8}
+body.dark .filter-wrap{background:#1a0a12}
+body.dark .filter button{background:#2a1220;color:#ffb3cd;border-color:#a4133c}
+body.dark .filter button.active{background:#a4133c;color:#fff}
+body.dark .grid{background:#1a0a12}
+body.dark .item{background:#2a1220}
+body.dark .item p{color:#ffb3cd}
+body.dark .hero{filter:brightness(.92)}
+body.dark .theme-btn{background:#2a1220;color:#ffb3cd;border-color:#555}
+
+@media(max-width:700px){nav{display:none}.hero{background:linear-gradient(rgba(255,214,224,.85), rgba(255,214,224,.85)), url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=900&q=80');background-size:cover;text-align:center}.hero h1{font-size:60px}.grid{grid-template-columns:1fr}.item img{height:280px}.topbar{justify-content:center;text-align:center}.filter-wrap .line{display:none}.footer{flex-direction:column;text-align:center}.theme-btn{padding:8px 14px;font-size:13px}}
+</style>
+<link rel="stylesheet" href="site.css">
+<script src="site-shell.js" defer></script>
+</head>
+<body>
+
+<div data-site-header></div>
+
+<div class="hero">
+<p>OUR GALLERY</p>
+<h1>Gallery</h1>
+<h2>Explore our work and see the beauty we create</h2>
+<div class="heart">♡ ~</div>
+</div>
+
+<div class="filter-wrap">
+<div class="line"></div>
+<div class="filter">
+<button class="active" onclick="filterGallery('all',this)">⊞ All</button>
+<button onclick="filterGallery('bridal',this)">👑 Bridal</button>
+<button onclick="filterGallery('makeup',this)">💄 Makeup</button>
+<button onclick="filterGallery('hair',this)">✂️ Hair</button>
+<button onclick="filterGallery('nails',this)">💅 Nails</button>
+</div>
+<div class="line"></div>
+</div>
+
+<div class="grid">
+<!-- BRIDAL 8 -->
+<div class="item bridal"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=700&q=80"><p>BRIDAL LOOK 1</p></div>
+<div class="item bridal"><img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=700&q=80"><p>BRIDAL LOOK 2</p></div>
+<div class="item bridal"><img src="https://images.unsplash.com/photo-1610173826608-bd1f53a52db1?auto=format&fit=crop&w=700&q=80"><p>BRIDAL LOOK 3</p></div>
+<div class="item bridal"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80"><p>BRIDAL LOOK 4</p></div>
+<div class="item bridal"><img src="https://images.unsplash.com/photo-1594552072238-430c4e9d2f1f?auto=format&fit=crop&w=700&q=80"><p>BRIDAL LOOK 5</p></div>
+<div class="item bridal"><img src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?auto=format&fit=crop&w=700&q=80"><p>BRIDAL LOOK 6</p></div>
+<div class="item bridal"><img src="https://images.unsplash.com/photo-1587271636175-90d60e04b2c0?auto=format&fit=crop&w=700&q=80"><p>BRIDAL LOOK 7</p></div>
+<div class="item bridal"><img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=700&q=80"><p>BRIDAL LOOK 8</p></div>
+<!-- MAKEUP 8 -->
+<div class="item makeup"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=700&q=80"><p>MAKEUP LOOK 1</p></div>
+<div class="item makeup"><img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=80"><p>MAKEUP LOOK 2</p></div>
+<div class="item makeup"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=700&q=80"><p>MAKEUP LOOK 3</p></div>
+<div class="item makeup"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80"><p>MAKEUP LOOK 4</p></div>
+<div class="item makeup"><img src="https://images.unsplash.com/photo-1500840216050-6ffa99d75160?auto=format&fit=crop&w=700&q=80"><p>MAKEUP LOOK 5</p></div>
+<div class="item makeup"><img src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=700&q=80"><p>MAKEUP LOOK 6</p></div>
+<div class="item makeup"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=700&q=80"><p>MAKEUP LOOK 7</p></div>
+<div class="item makeup"><img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=700&q=80"><p>MAKEUP LOOK 8</p></div>
+<!-- HAIR 8 -->
+<div class="item hair"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=80"><p>HAIR STYLING 1</p></div>
+<div class="item hair"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=80"><p>HAIR STYLING 2</p></div>
+<div class="item hair"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=700&q=80"><p>HAIR STYLING 3</p></div>
+<div class="item hair"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=700&q=80"><p>HAIR STYLING 4</p></div>
+<div class="item hair"><img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=700&q=80"><p>HAIR STYLING 5</p></div>
+<div class="item hair"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=700&q=80"><p>HAIR STYLING 6</p></div>
+<div class="item hair"><img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=700&q=80"><p>HAIR STYLING 7</p></div>
+<div class="item hair"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=80"><p>HAIR STYLING 8</p></div>
+<!-- NAILS 8 -->
+<div class="item nails"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=80"><p>NAIL ART 1 - PINK HEART</p></div>
+<div class="item nails"><img src="https://images.unsplash.com/photo-1519019121902-8967a78dcd25?auto=format&fit=crop&w=700&q=80"><p>NAIL ART 2 - FRENCH</p></div>
+<div class="item nails"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=80"><p>NAIL ART 3 - GLITTER</p></div>
+<div class="item nails"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=700&q=80"><p>NAIL ART 4 - RED</p></div>
+<div class="item nails"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=700&q=80"><p>NAIL ART 5 - PINK</p></div>
+<div class="item nails"><img src="https://images.unsplash.com/photo-1583209814683-c023ddc9cc1b?auto=format&fit=crop&w=700&q=80"><p>NAIL ART 6 - CHROME</p></div>
+<div class="item nails"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=700&q=80"><p>NAIL ART 7 - OMBRE</p></div>
+<div class="item nails"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=700&q=80"><p>NAIL ART 8 - CLASSIC</p></div>
+</div>
+
+<div data-site-footer></div>
+
+<script>
+function filterGallery(cat, btn){
+  document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.item').forEach(item=>{
+    if(cat==='all' || item.classList.contains(cat)){ item.classList.remove('hide'); }
+    else { item.classList.add('hide'); }
+  });
+}
+</script>
+</body>
+</html>

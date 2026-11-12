@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Glow and Grace Beauty Salon</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Allura&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff9f7;
+    color: #4b202b;
+}
+
+header {
+    background: #fff0ed;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid #f0d1d1;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: bold;
+    color: #702638;
+}
+
+.logo span {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b202b;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #bd5578;
+}
+
+.book-btn, .submit-btn {
+    background: #b64f72;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 23px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.theme-place {
+    position: absolute;
+    right: 4%;
+    top: 22%;
+    z-index: 2;
+    text-align: center;
+}
+.theme-toggle {
+    background: #fff;
+    color: #5b1d2c;
+    border: 1px solid #ead6d6;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.hero {
+    min-height: 340px;
+    padding: 55px 7%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+      linear-gradient(90deg,
+      rgba(255,235,232,.97),
+      rgba(255,235,232,.76),
+      rgba(255,235,232,.1)),
+      url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 520px;
+}
+
+.small-title {
+    color: #ad4869;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, serif;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    margin: 15px 0;
+}
+
+.script {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #b64f72;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    line-height: 1.8;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 35px 5%;
+    background: #fff2ef;
+}
+
+.feature {
+    text-align: center;
+    padding: 12px;
+    border-right: 1px solid #edc8cf;
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.feature .icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.feature h3 {
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding: 35px 5%;
+}
+.info-card {
+    background: #fff0ee;
+    border: 1px solid #f1d6d8;
+    border-radius: 15px;
+    padding: 25px 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px #70263808;
+}
+.info-card .icon {
+    width: 62px; height: 62px;
+    background: #f8d7dd;
+    color: #702638;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 14px;
+}
+.info-card h3 {
+    font-size: 20px;
+    color: #702638;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+.info-card .cw-num {
+    display: block;
+    color: #702638;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.info-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    color: #4b202b;
+}
+.info-card a {
+    color: #a83d61;
+    text-decoration: none;
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 25px;
+    padding: 15px 5% 45px;
+    align-items: stretch;
+}
+
+.form-box, .location-box {
+    background: #fff0ee;
+    border: 1px solid #f0d0d2;
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.form-box h2, .location-box h2 {
+    font-size: 29px;
+    margin: 15px 0;
+}
+
+.form-box p, .location-box p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+form {
+    margin-top: 22px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #4b202b;
+    margin-bottom: 8px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 0;
+    border: 1px solid #ebcdd0;
+    border-radius: 9px;
+    background: #fffaf9;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+input::placeholder, textarea::placeholder {
+    color: #a68b91;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #b64f72;
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+input.error, select.error, textarea.error {
+    border-color: #d6304a;
+    background: #fff2f4;
+}
+.error-msg {
+    display: none;
+    color: #d6304a;
+    font-size: 12px;
+    margin-top: 6px;
+}
+.error-msg.show {
+    display: block;
+}
+
+.submit-btn {
+    width: 100%;
+    font-size: 15px;
+}
+
+.submit-btn:hover, .book-btn:hover {
+    background: #862e4c;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,.55);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.popup-overlay.show {
+    display: flex;
+}
+.popup-box {
+    background: #fff9f7;
+    border-radius: 18px;
+    padding: 35px 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+}
+.popup-box .tick {
+    width: 65px; height: 65px;
+    background: #b64f72;
+    color: #fff;
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+}
+.popup-box h3 {
+    font-size: 24px;
+    color: #702638;
+    margin-bottom: 10px;
+}
+.popup-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #4b202b;
+    margin-bottom: 22px;
+}
+.popup-btn {
+    background: #b64f72;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 35px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.popup-btn:hover {
+    background: #862e4c;
+}
+
+.map-wrap {
+    position: relative;
+    margin-top: 20px;
+}
+.map {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+    display: block;
+}
+.map-pin-label {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    pointer-events: none;
+    z-index: 2;
+    white-space: nowrap;
+}
+.map-pin-label .pin {
+    font-size: 32px;
+    line-height: 1;
+    filter: drop-shadow(0 3px 3px rgba(0,0,0,.4));
+    margin-top: 2px;
+}
+.map-pin-label .pin-text {
+    background: rgba(255,255,255,.95);
+    color: #c62828;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.3;
+    padding: 4px 7px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+.address {
+    margin-top: 15px;
+    padding: 15px;
+    background: #ffe2e5;
+    border-radius: 10px;
+}
+
+.salon-photo {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 18px;
+}
+
+.visit-card {
+    background: #fffaf9;
+    border: 1px solid #f0d0d2;
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: 20px;
+}
+.visit-head {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+.visit-head .v-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+.visit-head h3 {
+    font-size: 20px;
+    color: #702638;
+    margin: 0;
+}
+.visit-head h3 span {
+    color: #d9a0b5;
+    font-weight: normal;
+}
+.visit-head p {
+    font-size: 12px;
+    color: #6d4a55;
+    margin-top: 2px;
+}
+.visit-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 12px;
+    margin: 16px 0;
+}
+.visit-features .vf {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.visit-features .vf .ic {
+    width: 32px; height: 32px;
+    min-width: 32px;
+    border: 1px solid #f0d0d2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    background: #fff;
+}
+.visit-features .vf span {
+    font-size: 11px;
+    line-height: 1.4;
+    color: #4b202b;
+}
+.visit-img-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.visit-img-wrap {
+    position: relative;
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.visit-img-wrap img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    display: block;
+}
+.visit-img-wrap .shop-name {
+    position: absolute;
+    top: 10px; left: 0; right: 0;
+    text-align: center;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 2px 8px rgba(0,0,0,.6);
+    letter-spacing: .5px;
+}
+.visit-img-wrap .shop-name small {
+    display: block;
+    font-size: 7px;
+    letter-spacing: 3px;
+    font-family: Arial, sans-serif;
+}
+.visit-side {
+    width: 82px;
+    min-width: 82px;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #702638;
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+.social {
+    text-align: center;
+    padding: 45px 15px;
+    background:
+      linear-gradient(rgba(255,228,228,.88),
+      rgba(255,228,228,.88)),
+      url("https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.social h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.social p {
+    margin-bottom: 20px;
+}
+
+.social a {
+    display: inline-block;
+    background: #b64f72;
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 13px;
+    margin: 5px;
+}
+
+footer {
+    background: #4b1827;
+    color: white;
+    padding: 30px 6%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+footer h2 {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #ffe0e7;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.copyright {
+    border-top: 1px solid #80505d;
+    margin-top: 22px;
+    padding-top: 18px;
+    text-align: center;
+    font-size: 12px;
+}
+
+body.dark-mode {
+    background: #241923;
+    color: #f8edf5;
+}
+body.dark-mode header {
+    background: #302230;
+    border-bottom-color: #62465b;
+}
+body.dark-mode .logo {
+    color: #f3b8d7;
+}
+body.dark-mode nav a {
+    color: #f8edf5;
+}
+body.dark-mode nav a:hover {
+    color: #e8a0c5;
+}
+body.dark-mode .theme-toggle {
+    background: #493246;
+    color: #ffe7f3;
+    border-color: #d986b5;
+}
+body.dark-mode .hero {
+    background:
+      linear-gradient(90deg,
+      rgba(36,25,35,.97),
+      rgba(36,25,35,.88),
+      rgba(36,25,35,.12)),
+      url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
+}
+body.dark-mode .hero h1,
+body.dark-mode .hero p,
+body.dark-mode .small-title {
+    color: #f8edf5;
+}
+body.dark-mode .features {
+    background: #2e2230;
+}
+body.dark-mode .feature {
+    border-right-color: #62465b;
+}
+body.dark-mode .info-card {
+    background: #352536;
+    border-color: #62465b;
+}
+body.dark-mode .info-card .icon {
+    background: #493246;
+    color: #f3b8d7;
+}
+body.dark-mode .info-card h3,
+body.dark-mode .info-card .cw-num {
+    color: #f3b8d7;
+}
+body.dark-mode .info-card p {
+    color: #f8edf5;
+}
+body.dark-mode .info-card a {
+    color: #f3b8d7;
+}
+body.dark-mode .form-box,
+body.dark-mode .location-box {
+    background: #352536;
+    border-color: #62465b;
+}
+body.dark-mode .form-group label {
+    color: #f8edf5;
+}
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #241923;
+    border-color: #62465b;
+    color: #f8edf5;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #b99bb0;
+}
+body.dark-mode .address {
+    background: #493246;
+}
+body.dark-mode .visit-card {
+    background: #2e2230;
+    border-color: #62465b;
+}
+body.dark-mode .visit-head h3,
+body.dark-mode .visit-side {
+    color: #f3b8d7;
+}
+body.dark-mode .visit-head p,
+body.dark-mode .visit-features .vf span {
+    color: #f8edf5;
+}
+body.dark-mode .visit-features .vf .ic {
+    background: #241923;
+    border-color: #62465b;
+}
+body.dark-mode .social {
+    background:
+      linear-gradient(rgba(36,25,35,.88),
+      rgba(36,25,35,.88)),
+      url("https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+}
+body.dark-mode footer {
+    background: #1b131c;
+}
+body.dark-mode .popup-box {
+    background: #352536;
+}
+body.dark-mode .popup-box h3 {
+    color: #f3b8d7;
+}
+body.dark-mode .popup-box p {
+    color: #f8edf5;
+}
+
+@media (max-width: 850px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-section {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-place {
+        top: 12%;
+        right: 3%;
+    }
+}
+
+@media (max-width: 500px) {
+    .features, .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        border-right: none;
+        border-bottom: 1px solid #edc8cf;
+    }
+
+    .form-box, .location-box {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 40px 6%;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<link rel="stylesheet" href="site.css">
+<script src="site-shell.js" defer></script>
+</head>
+
+<body>
+
+<div data-site-header></div>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="small-title">GET IN TOUCH</div>
+
+        <h1>Contact Us</h1>
+
+        <div class="script">We're Here For You ♡</div>
+
+        <p>
+            Have a question, need assistance, or want to
+            book your next beauty appointment?
+            We'd love to hear from you!
+        </p>
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature">
+        <div class="icon">♡</div>
+        <h3>Quick Response</h3>
+        <p>We're happy to help with your questions.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">♥</div>
+        <h3>Friendly Support</h3>
+        <p>Our team is here for you.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">♧</div>
+        <h3>Safe & Secure</h3>
+        <p>Your comfort matters to us.</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">☆</div>
+        <h3>Your Beauty, Our Priority</h3>
+        <p>We want you to feel your best.</p>
+    </div>
+
+</section>
+
+<section class="contact-info">
+
+    <div class="info-card">
+        <div class="icon">📞</div>
+        <h3>Call Us</h3>
+        <a class="cw-num" href="tel:+923001234567">+92 300 1234567</a>
+        <p>(10:00 AM – 11:00 PM)<br>Monday to Saturday</p>
+    </div>
+
+    <div class="info-card">
+        <div class="icon">💬</div>
+        <h3>WhatsApp</h3>
+        <a class="cw-num" href="https://wa.me/923001234567" target="_blank">+92 300 1234567</a>
+        <p>Chat with us anytime<br>(Quick replies)</p>
+    </div>
+
+    <div class="info-card">
+        <div class="icon">📍</div>
+        <h3>Our Location</h3>
+        <p>House No. 12, Street 5,<br>Gulgasht Colony, Multan</p>
+        <p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Glow+and+Grace+Beauty+Salon+House+No+12+Street+5+Gulgasht+Colony+Multan"
+               target="_blank">
+                View on Google Maps →
+            </a>
+        </p>
+    </div>
+
+    <div class="info-card">
+        <div class="icon">✉️</div>
+        <h3>Email Us</h3>
+        <p>
+            <a href="mailto:glowandgrace@gmail.com">
+                glowandgrace@gmail.com
+            </a>
+        </p>
+        <p>(We reply within 24 hours)</p>
+    </div>
+
+</section>
+
+<section class="main-section">
+
+    <div class="form-box">
+
+        <div class="small-title">SEND US A MESSAGE</div>
+
+        <h2>We'd Love to Hear From You ♡</h2>
+
+        <p>
+            Fill out the form below and let us know
+            how we can help you.
+        </p>
+
+        <form id="contactForm" novalidate>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text"
+                           id="name"
+                           placeholder="Your name">
+                    <span class="error-msg" id="nameError">Please enter a valid name (only letters, min 3 characters)</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email"
+                           id="email"
+                           placeholder="example@gmail.com">
+                    <span class="error-msg" id="emailError">Please enter a valid email address</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel"
+                       id="phone"
+                       placeholder="Your phone number">
+                <span class="error-msg" id="phoneError">Please enter a valid phone number (e.g. 03001234567)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Subject *</label>
+                <select id="service">
+                    <option value="">Select a subject</option>
+                    <option>Facial & Skin Care</option>
+                    <option>Hair Care</option>
+                    <option>Hair Styling</option>
+                    <option>Makeup</option>
+                    <option>Nail Care</option>
+                    <option>Waxing</option>
+                    <option>Bridal Makeup</option>
+                    <option>Massage & Spa</option>
+                    <option>Other Service</option>
+                </select>
+                <span class="error-msg" id="serviceError">Please select a subject</span>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message"
+                          placeholder="Your message here..."></textarea>
+                <span class="error-msg" id="messageError">Please write your message (min 10 characters)</span>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Send Message →
+            </button>
+
+        </form>
+    </div>
+
+    <div class="location-box">
+
+        <div class="small-title">VISIT OUR SALON</div>
+
+        <h2>Find Us Here 📍</h2>
+
+        <p>Find a beauty experience made just for you.</p>
+
+        <div class="map-wrap">
+            <iframe
+                class="map"
+                src="https://maps.google.com/maps?q=Gulgasht%20Colony%2C%20Multan&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+            <div class="map-pin-label">
+                <span class="pin">📍</span>
+                <span class="pin-text">Glow and Grace<br>Beauty Salon</span>
+            </div>
+        </div>
+
+        <div class="address">
+            <h3>📍 Salon Address</h3>
+            <p>House No. 12, Street 5, Gulgasht Colony, Multan</p>
+            <p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Glow+and+Grace+Beauty+Salon+House+No+12+Street+5+Gulgasht+Colony+Multan"
+                   target="_blank">
+                    Open Google Maps →
+                </a>
+            </p>
+        </div>
+
+        <div class="visit-card">
+            <div class="visit-head">
+                <div class="v-icon">🏠</div>
+                <div>
+                    <h3>Visit Our Salon <span>—</span></h3>
+                    <p>Step in and experience the difference.</p>
+                </div>
+            </div>
+
+            <div class="visit-features">
+                <div class="vf"><div class="ic">🛡️</div><span>Clean &amp; Hygienic Environment</span></div>
+                <div class="vf"><div class="ic">🛋️</div><span>Comfortable Waiting Area</span></div>
+                <div class="vf"><div class="ic">👩‍🎨</div><span>Professional &amp; Experienced Staff</span></div>
+                <div class="vf"><div class="ic">🅿️</div><span>Ample Parking Space</span></div>
+            </div>
+
+            <div class="visit-img-row">
+                <div class="visit-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85" alt="Glow and Grace Beauty Salon">
+                    <div class="shop-name">Glow and Grace<small>BEAUTY SALON</small></div>
+                </div>
+                <div class="visit-side">Your<br>Beauty<br>Destination<br>in Multan<br>♡</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="social">
+
+    <h2>Let's Stay Connected ♡</h2>
+
+    <p>Follow us for beauty tips, new services and special offers.</p>
+
+    <a href="https://www.instagram.com/" target="_blank">IG</a>
+    <a href="https://www.facebook.com/" target="_blank">f</a>
+    <a href="https://www.tiktok.com/" target="_blank">♪</a>
+    <a href="https://wa.me/923001234567" target="_blank">WA</a>
+
+</section>
+
+<div data-site-footer></div>
+
+<div class="popup-overlay" id="successPopup">
+  <div class="popup-box">
+    <div class="tick">✓</div>
+    <h3>Message Sent Successfully! ♡</h3>
+    <p>Thank you for contacting Glow and Grace.<br>We will reply within 24 hours.</p>
+    <button class="popup-btn" id="popupOkBtn">OK → Open WhatsApp</button>
+  </div>
+</div>
+
+<script>
+function showError(inputId, errorId, isValid){
+  const input = document.getElementById(inputId);
+  const err = document.getElementById(errorId);
+  if(isValid){
+    input.classList.remove("error");
+    err.classList.remove("show");
+  } else {
+    input.classList.add("error");
+    err.classList.add("show");
+  }
+  return isValid;
+}
+function validateName(){
+  const v = document.getElementById("name").value.trim();
+  return showError("name","nameError", /^[A-Za-z\s]{3,}$/.test(v));
+}
+function validateEmail(){
+  const v = document.getElementById("email").value.trim();
+  return showError("email","emailError", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v));
+}
+function validatePhone(){
+  const v = document.getElementById("phone").value.trim().replace(/[\s-]/g,"");
+  const clean = v.startsWith("+92") ? "0" + v.slice(3) : v;
+  return showError("phone","phoneError", /^03\d{9}$/.test(clean));
+}
+function validateService(){
+  const v = document.getElementById("service").value;
+  return showError("service","serviceError", v !== "");
+}
+function validateMessage(){
+  const v = document.getElementById("message").value.trim();
+  return showError("message","messageError", v.length >= 10);
+}
+["name","email","phone","service","message"].forEach(id=>{
+  document.getElementById(id).addEventListener("input", ()=>{
+    if(id==="name") validateName();
+    if(id==="email") validateEmail();
+    if(id==="phone") validatePhone();
+    if(id==="service") validateService();
+    if(id==="message") validateMessage();
+  });
+});
+
+let pendingWhatsAppURL = "";
+
+document.getElementById("contactForm").addEventListener("submit",
+function(event) {
+    event.preventDefault();
+
+    const okName = validateName();
+    const okEmail = validateEmail();
+    const okPhone = validatePhone();
+    const okService = validateService();
+    const okMessage = validateMessage();
+
+    if (!okName || !okEmail || !okPhone || !okService || !okMessage) {
+        return;
+    }
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    const whatsappNumber = "923001234567";
+
+    const text =
+        "Hello Glow and Grace Beauty Salon!" +
+        "\nName: " + name +
+        "\nEmail: " + email +
+        "\nPhone: " + phone +
+        "\nService: " + (service || "Not selected") +
+        "\nMessage: " + message;
+
+    pendingWhatsAppURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(text);
+
+    document.getElementById("successPopup").classList.add("show");
+});
+
+document.getElementById("popupOkBtn").addEventListener("click", function(){
+  document.getElementById("successPopup").classList.remove("show");
+  document.getElementById("contactForm").reset();
+  if(pendingWhatsAppURL){
+    window.open(pendingWhatsAppURL, "_blank");
+    pendingWhatsAppURL = "";
+  }
+});
+
+</script>
+
+</body>
+</html>

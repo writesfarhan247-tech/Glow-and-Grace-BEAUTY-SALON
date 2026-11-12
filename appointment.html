@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment | Glow & Grace Beauty Salon</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Allura&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: #fffdfb; color: #222; }
+a { text-decoration: none; color: inherit; }
+header { background: #111113; color: white; padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.logo { color: #efb9b9; font-family: 'Dancing Script', cursive; font-size: 32px; white-space: nowrap; }
+.logo small { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 5px; text-align: center; }
+nav { display: flex; gap: 23px; align-items: center; flex-wrap: wrap; }
+nav a { font-size: 13px; }
+nav a:hover { color: #efb9b9; }
+.book-btn { background: #efb9b9; padding: 12px 20px; border-radius: 10px; color: #171313; white-space: nowrap; }
+.hero { display: grid; grid-template-columns: 43% 57%; min-height: 350px; position: relative; }
+/* THEME - CONTACT PAGE JAISA - SIRF YE ADD HUA HAI */
+.theme-place { position: absolute; right: 4%; top: 22%; z-index: 2; text-align: center; }
+.theme-toggle { background: #fff; color: #5b1d2c; border: 1px solid #ead6d6; border-radius: 25px; padding: 12px 20px; font-size: 12px; font-weight: 600; font-family: Arial, sans-serif; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+.hero-left { background: #fceaea; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 35px 20px; }
+.script { font-family: 'Dancing Script', cursive; color: #994c48; }
+.hero-left .script { font-size: 46px; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 500; }
+.hero-left p { margin-top: 15px; }
+.heart { margin: 18px 0; color: #a85b58; letter-spacing: 4px; }
+.hero-right { position: relative; min-height: 350px; background-image: linear-gradient(rgba(255,235,235,.08), rgba(255,235,235,.08)), url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=90"); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+.image-logo { text-align: center; color: #fff; text-shadow: 0 2px 12px #583b35; }
+.image-logo .crown { font-size: 55px; }
+.image-logo h2 { font-family: 'Dancing Script', cursive; font-size: 48px; }
+.image-logo p { letter-spacing: 6px; font-size: 13px; }
+.content { display: grid; grid-template-columns: .85fr 1.15fr; gap: 22px; padding: 25px 5%; }
+.why { background: linear-gradient(140deg, #f9e1e1, #fff2ef); border-radius: 10px; padding: 28px; }
+.why .script { font-size: 28px; }
+h2 { font-family: 'Playfair Display', serif; font-weight: 500; }
+.why h2 { font-size: 29px; margin: 10px 0; }
+.why > p { font-size: 14px; line-height: 1.8; }
+.feature { display: flex; align-items: center; gap: 15px; margin-top: 19px; font-size: 14px; line-height: 1.5; }
+.feature span { display: grid; place-items: center; background: #f5cccc; color: #944a47; width: 50px; height: 50px; border-radius: 50%; font-size: 25px; flex-shrink: 0; }
+.quote { font-family: 'Dancing Script', cursive; color: #994c48; font-size: 29px; text-align: center; line-height: 1.4; margin-top: 27px; }
+.booking { border: 1px solid #f0dddd; padding: 28px; border-radius: 10px; }
+.booking h2 { font-size: 30px; }
+.description { color: #777; font-size: 13px; line-height: 1.7; margin: 12px 0 22px; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 15px; }
+.field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.full { grid-column: 1 / -1; }
+label { font-size: 13px; }
+input, select, textarea { width: 100%; padding: 12px; font: inherit; font-size: 13px; border: 1px solid #dedede; border-radius: 5px; background: white; }
+textarea { resize: vertical; min-height: 65px; }
+input.error, select.error, textarea.error { border-color: #d6304a; background: #fff2f4; }
+.error-msg { display: none; color: #d6304a; font-size: 12px; margin-top: 2px; line-height: 1.4; }
+.error-msg.show { display: block; }
+.submit { grid-column: 1 / -1; border: none; background: linear-gradient(100deg, #eaa4a6, #d9868b); color: white; padding: 16px; border-radius: 9px; font: inherit; cursor: pointer; }
+.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 25px; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.contact strong { font-weight: 500; }
+.promo { background: #f9e1e1; padding: 22px 5%; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: center; text-align: center; }
+.promo-img { height: 110px; background: url("https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85") center/cover; border-radius: 7px; }
+.promo .script { font-size: 25px; }
+.promo h2 { font-size: 28px; }
+.promo a { font-family: 'Dancing Script', cursive; font-size: 35px; color: #994c48; }
+.information { background: #fff0f0; border-top: 1px solid #f1dada; border-bottom: 1px solid #f1dada; padding: 20px 5%; display: flex; justify-content: center; align-items: center; gap: 45px; }
+.info-item { display: flex; align-items: center; gap: 15px; }
+.info-icon { font-size: 32px; color: #d58a8e; }
+.info-item p { font-size: 12px; margin-bottom: 5px; }
+.info-item strong { font-size: 14px; font-weight: 500; }
+.separator { height: 45px; width: 1px; background: #dfb9b9; }
+footer { background: #111113; color: #f3c0c2; padding: 28px 5% 0; }
+.footer-top { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 25px; align-items: center; padding-bottom: 25px; }
+.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; }
+.footer-links a { color: #fff; font-size: 12px; }
+.social { text-align: center; margin-top: 17px; letter-spacing: 12px; }
+.newsletter { color: white; border-left: 1px solid #554646; padding-left: 20px; font-size: 12px; line-height: 1.8; }
+.newsletter form { display: flex; margin-top: 10px; gap: 5px; }
+.newsletter input { min-width: 0; background: #202020; color: white; }
+.newsletter button { border: none; background: #efb9b9; padding: 0 12px; border-radius: 4px; cursor: pointer; }
+.footer-bottom { border-top: 1px solid #514343; padding: 17px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: #d8caca; font-size: 10px; }
+@media(max-width: 850px) {
+  header { flex-wrap: wrap; justify-content: center; }
+  nav { justify-content: center; }
+  .hero { grid-template-columns: 1fr 1fr; }
+  .content { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .newsletter { grid-column: 1 / -1; border-left: none; border-top: 1px solid #554646; padding: 18px 0 0; }
+  .theme-place { top: 12%; right: 3%; }
+}
+@media(max-width: 550px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 40px 15px; }
+  .hero h1 { font-size: 39px; }
+  .hero-right { min-height: 270px; }
+  .content { padding: 15px; }
+  .why, .booking { padding: 22px 17px; }
+  form { grid-template-columns: 1fr; }
+  .full, .submit { grid-column: 1; }
+  .contact { grid-template-columns: 1fr; }
+  .promo { grid-template-columns: 1fr 1fr; }
+  .promo-img { grid-column: 1 / -1; }
+  .information { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .separator { width: 100%; height: 1px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-top > .logo { justify-content: center; }
+  .newsletter { grid-column: 1; }
+  .footer-bottom { justify-content: center; text-align: center; }
+}
+body.dark-mode { background: #241923; color: #f8edf5; }
+body.dark-mode header { background: #1b131c; }
+body.dark-mode .hero-left { background: #352536; color: #f8edf5; }
+body.dark-mode .script, body.dark-mode .quote, body.dark-mode .promo a { color: #f3b8d7; }
+body.dark-mode .hero-right { background-image: linear-gradient(rgba(36,25,35,.35), rgba(36,25,35,.35)), url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=90"); }
+body.dark-mode .why { background: linear-gradient(140deg, #352536, #493246); color: #f8edf5; }
+body.dark-mode .feature span { background: #493246; color: #f3b8d7; }
+body.dark-mode .booking { background: #302230; border-color: #62465b; color: #f8edf5; }
+body.dark-mode .description, body.dark-mode .contact span { color: #d9c5d5; }
+body.dark-mode input, body.dark-mode select, body.dark-mode textarea { background: #241923; color: #fff0f7; border-color: #62465b; }
+body.dark-mode input::placeholder, body.dark-mode textarea::placeholder { color: #cbb6c8; }
+body.dark-mode .promo { background: #352536; color: #f8edf5; }
+body.dark-mode .information { background: #302230; color: #f8edf5; border-color: #62465b; }
+body.dark-mode .separator { background: #62465b; }
+body.dark-mode footer { background: linear-gradient(100deg, #1b131c, #302030, #1b131c); }
+body.dark-mode .newsletter input { background: #241923; color: white; }
+body.dark-mode .theme-toggle { background: #493246 !important; color: #fff0f7 !important; border-color: #e8a0c5 !important; }
+@media (max-width: 550px) { body.dark-mode .hero-left { background: #352536; } }
+</style>
+<link rel="stylesheet" href="site.css">
+<script src="site-shell.js" defer></script>
+</head>
+<body>
+<div data-site-header></div>
+<section class="hero">
+<div class="hero-left"><span class="script">Book Your</span><h1>Appointment</h1><p>Your Beauty • Our Priority</p><div class="heart">──────── ♥ ────────</div><p>Relax &nbsp; • &nbsp; Refresh &nbsp; • &nbsp; Rejuvenate</p></div>
+<div class="hero-right"><div class="image-logo"><div class="crown">♕</div><h2>Glow &amp; Grace</h2><p>BEAUTY SALON</p></div></div>
+</section>
+<main class="content">
+<section class="why">
+<span class="script">Why Choose Us?</span><h2>Your Beauty, Our Care</h2>
+<p>At Glow &amp; Grace, we believe every client is unique and deserves personalized care. Book your appointment today and let us bring out the best version of you!</p>
+<div class="feature"><span>♧</span><p>Professional<br>&amp; Experienced Staff</p></div>
+<div class="feature"><span>♡</span><p>Premium Quality<br>Products</p></div>
+<div class="feature"><span>✧</span><p>Clean &amp; Hygienic<br>Environment</p></div>
+<div class="feature"><span>◷</span><p>Flexible Timings<br>for Your Convenience</p></div>
+<div class="quote">Because You Deserve<br>to Feel Beautiful</div>
+<div class="heart" style="text-align:center">───── ♥ ─────</div>
+</section>
+<section class="booking" id="booking">
+<h2>Book Your Appointment</h2>
+<p class="description">Fill in the details below and we'll confirm your slot as soon as possible.</p>
+<form id="appointmentForm" novalidate>
+<div class="field"><label for="name">Full Name *</label><input id="name" name="name" type="text" placeholder="Your name"><span class="error-msg" id="nameError">Please enter a valid name (only letters, min 3 characters)</span></div>
+<div class="field"><label for="phone">Phone Number *</label><input id="phone" name="phone" type="tel" placeholder="Your phone number"><span class="error-msg" id="phoneError">Please enter a valid phone number (e.g. 03001234567)</span></div>
+<div class="field full"><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="example@gmail.com"><span class="error-msg" id="emailError">Please enter a valid email address</span></div>
+<div class="field"><label for="service">Service *</label><select id="service" name="service"><option value="">Select a service</option><option>Facial &amp; Skin Care</option><option>Hair Styling</option><option>Hair Cut &amp; Treatment</option><option>Bridal Makeup</option><option>Party Makeup</option><option>Manicure &amp; Pedicure</option><option>Waxing &amp; Threading</option><option>Mehndi</option></select><span class="error-msg" id="serviceError">Please select a service</span></div>
+<div class="field"><label for="date">Preferred Date *</label><input id="date" name="date" type="date"><span class="error-msg" id="dateError">Please select today or a future date</span></div>
+<div class="field"><label for="time">Preferred Time *</label><select id="time" name="time"><option value="">Select time</option><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option><option>6:00 PM</option><option>7:00 PM</option><option>8:00 PM</option><option>9:00 PM</option><option>10:00 PM</option><option>11:00 PM</option></select><span class="error-msg" id="timeError">Please select your preferred time</span></div>
+<div class="field full"><label for="notes">Additional Notes (Optional)</label><textarea id="notes" name="notes" placeholder="Any special request?"></textarea></div>
+<button class="submit" type="submit">♧ &nbsp; Confirm Appointment</button>
+</form>
+<div class="contact">
+<div><span style="color:#984a45;font-size:20px">☎</span><br><span style="color:#85858d">Need help? Call us at</span><br><strong>+92 300 1234567</strong></div>
+<div><span style="color:#984a45;font-size:20px">⌖</span><br><span style="color:#85858d">Visit us at</span><br><strong>Gulgasht Colony, Multan, Pakistan</strong></div>
+</div>
+</section>
+</main>
+<section class="promo">
+<div class="promo-img"></div>
+<div><span class="script">Self Care Isn't a Luxury</span><h2>It's a Necessity</h2><div class="heart">──── ♥ ────</div></div>
+<a href="#booking">Book Now ↗</a>
+</section>
+<section class="information">
+<div class="info-item"><span class="info-icon">◷</span><div><p>Opening Hours</p><strong>10 AM to 11 PM</strong></div></div>
+<div class="separator"></div>
+<div class="info-item"><span class="info-icon">⌖</span><div><p>Visit Us At</p><strong>Gulgasht Colony,<br>Multan, Pakistan</strong></div></div>
+</section>
+<div data-site-footer></div>
+<script>
+const dateField = document.getElementById("date");
+const appointmentForm = document.getElementById("appointmentForm");
+function getToday() { const now = new Date(); return new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().split("T")[0]; }
+dateField.min = getToday();
+function showError(inputId, errorId, isValid){ const input = document.getElementById(inputId); const err = document.getElementById(errorId); if(isValid){ input.classList.remove("error"); err.classList.remove("show"); } else { input.classList.add("error"); err.classList.add("show"); } return isValid; }
+function validateName(){ const v = document.getElementById("name").value.trim(); return showError("name","nameError", /^[A-Za-z\s]{3,}$/.test(v)); }
+function validatePhone(){ const v = document.getElementById("phone").value.trim().replace(/[\s-]/g,""); const clean = v.startsWith("+92") ? "0" + v.slice(3) : v; return showError("phone","phoneError", /^03\d{9}$/.test(clean)); }
+function validateEmail(){ const v = document.getElementById("email").value.trim(); if(v === "") return showError("email","emailError", true); return showError("email","emailError", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)); }
+function validateService(){ const v = document.getElementById("service").value; return showError("service","serviceError", v !== ""); }
+function validateDate(){ const v = dateField.value; if(v === "") return showError("date","dateError", false); return showError("date","dateError", v >= getToday()); }
+function validateTime(){ const v = document.getElementById("time").value; return showError("time","timeError", v !== ""); }
+["name","phone","email","service","date","time"].forEach(id=>{ document.getElementById(id).addEventListener("input", ()=>{ if(id==="name") validateName(); if(id==="phone") validatePhone(); if(id==="email") validateEmail(); if(id==="service") validateService(); if(id==="date") validateDate(); if(id==="time") validateTime(); }); document.getElementById(id).addEventListener("change", ()=>{ if(id==="name") validateName(); if(id==="phone") validatePhone(); if(id==="email") validateEmail(); if(id==="service") validateService(); if(id==="date") validateDate(); if(id==="time") validateTime(); }); });
+appointmentForm.addEventListener("submit", function(event) { event.preventDefault(); const okName = validateName(); const okPhone = validatePhone(); const okEmail = validateEmail(); const okService = validateService(); const okDate = validateDate(); const okTime = validateTime(); if (!okName || !okPhone || !okEmail || !okService || !okDate || !okTime) { return; } const name = document.getElementById("name").value.trim(); const service = document.getElementById("service").value; const date = dateField.value; const time = document.getElementById("time").value; alert("Thank you, " + name + "!\n\n" + "Your appointment request has been recorded in this demo.\n\n" + "Service: " + service + "\n" + "Date: " + date + "\n" + "Time: " + time + "\n\n" + "Glow & Grace Beauty Salon"); appointmentForm.reset(); dateField.min = getToday(); });
+</script>
+</body>
+</html>
