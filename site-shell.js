@@ -1,13 +1,13 @@
 (() => {
   const pages = [
-    ["home.html", "Home"],
+    ["/", "Home"],
     ["about.html", "About"],
     ["services.html", "Services"],
     ["gallery.html", "Gallery"],
     ["appointment.html", "Appointment"],
     ["contact.html", "Contact"]
   ];
-  const currentPage = decodeURIComponent(window.location.pathname).split(/[\\/]/).pop() || "home.html";
+  const currentPage = decodeURIComponent(window.location.pathname).split(/[\\/]/).pop() || "/";
   const headerHost = document.querySelector("[data-site-header]");
   const footerHost = document.querySelector("[data-site-footer]");
 
@@ -31,7 +31,7 @@
   headerHost.outerHTML = `
     <header class="site-header">
       <div class="site-header-inner">
-        <a class="site-brand" href="home.html" aria-label="Glow and Grace home">
+        <a class="site-brand" href="/" aria-label="Glow and Grace home">
           <span class="site-brand-mark" aria-hidden="true">G<span>✿</span></span>
           <span class="site-brand-copy"><span class="site-brand-name">Glow and Grace</span><span class="site-brand-sub">BEAUTY SALON</span></span>
         </a>
@@ -46,7 +46,7 @@
   footerHost.outerHTML = `
     <footer class="site-footer">
       <div class="site-footer-inner">
-        <a class="site-brand site-footer-brand" href="home.html" aria-label="Glow and Grace home">
+        <a class="site-brand site-footer-brand" href="/" aria-label="Glow and Grace home">
           <span class="site-brand-mark" aria-hidden="true">G<span>✿</span></span>
           <span class="site-brand-copy"><span class="site-brand-name">Glow and Grace</span><span class="site-brand-sub">BEAUTY SALON</span></span>
         </a>
